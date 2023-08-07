@@ -10,24 +10,24 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("admin_navbar.html");
+      });
+    </script>
   </head>
   <body>
-    <script>
-      fetch("./admin_navbar.html")
-        .then((response) => {
-          return response.text();
-        })
-        .then((html) => {
-          document.body.innerHTML = html;
-        });
-    </script>
 
+    <div id="includeHtml"></div>
     <div class="p-4 sm:ml-64">
       <div
         class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
       >
-        dfsdf
+        dfsdfxdgfd
       </div>
     </div>
+    
   </body>
 </html>
