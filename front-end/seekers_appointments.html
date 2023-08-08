@@ -9,16 +9,94 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d45b3203c1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
     <title>Document</title>
 
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
       $(function () {
         $("#includeHtml").load("seekers_navbar.html");
       });
     </script>
+    <script>
+      $(document).ready(function () {
+        $("#example").DataTable();
+      });
+    </script>
   </head>
   <body>
     <div id="includeHtml"></div>
+
+    <div style="padding: 60px">
+      <table id="example" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Appointment No</th>
+            <th>Category</th>
+            <th>Consultant Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0001</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>2011-04-25</td>
+            <td>61</td>
+            <td>Pending</td>
+            <td>
+              <button
+                type="button"
+                class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button
+                type="button"
+                class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>0002</td>
+            <td>System</td>
+            <td>Edinburgh</td>
+            <td>2011-04-25</td>
+            <td>61</td>
+            <td>Conform</td>
+            <td>
+              <button
+                type="button"
+                class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button
+                type="button"
+                class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
