@@ -23,9 +23,7 @@
     <div id="includeHtml"></div>
 
     <div style="padding: 60px">
-      <h5 class="text-xl font-bold dark:text-white">
-        Make an Appointment
-      </h5>
+      <h5 class="text-xl font-bold dark:text-white">Make an Appointment</h5>
       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <form>
         <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -153,6 +151,19 @@
             <option value="FR">France</option>
             <option value="DE">Germany</option>
           </select>
+        </div>
+        <div class="mb-6">
+          <label
+            for="message"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Your Message</label
+          >
+          <textarea
+            id="message"
+            rows="4"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write your thoughts here..."
+          ></textarea>
         </div>
         <button
           type="submit"
