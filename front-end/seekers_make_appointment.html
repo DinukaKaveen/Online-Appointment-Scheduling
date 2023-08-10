@@ -32,28 +32,38 @@
         this.time.value,
         this.category.value,
         this.consultant_id.value,
+        this.seeker_id.value,
         this.message.value,
         this.status.value);"
       >
+        <div class="mb-6">
+          <input
+            type="text"
+            id="seekerId"
+            name="seeker_id"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            id="consultant_id"
+            name="consultant_id"
+            placeholder="consultant_id"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            type="text"
+            id="status"
+            name="status"
+            value="Pending"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+
         <div class="grid gap-6 mb-6 md:grid-cols-2">
-          <div>
-            <input
-              type="text"
-              id="consultant_id"
-              name="consultant_id"
-              placeholder="consultant_id"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="status"
-              name="status"
-              value="Pending"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            />
-          </div>
           <div>
             <label
               for="date"
@@ -137,6 +147,7 @@
         time,
         category,
         consultant_id,
+        seeker_id,
         message,
         status
       ) {
@@ -150,8 +161,9 @@
             time,
             category,
             consultant_id,
+            seeker_id,
             message,
-            status
+            status,
           }),
         })
           .then((response) => {
@@ -165,6 +177,11 @@
             alert("Error: " + error);
           });
       }
+    </script>
+
+    <script>
+      document.getElementById("seekerId").value =
+        sessionStorage.getItem("seeker_id");
     </script>
   </body>
 </html>
