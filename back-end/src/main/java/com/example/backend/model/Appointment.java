@@ -12,10 +12,11 @@ public class Appointment {
     @Id
     @GeneratedValue
     private Integer appointment_id;
+    private Integer user_id;
+    private Integer consultant_id;
     private String date;
     private String time;
     private String category;
-    private String consultant_name;
     private String message;
     private String status;
 
@@ -25,6 +26,22 @@ public class Appointment {
 
     public void setAppointment_id(Integer appointment_id) {
         this.appointment_id = appointment_id;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public Integer getConsultant_id() {
+        return consultant_id;
+    }
+
+    public void setConsultant_id(Integer consultant_id) {
+        this.consultant_id = consultant_id;
     }
 
     public String getDate() {
@@ -49,14 +66,6 @@ public class Appointment {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getConsultant_name() {
-        return consultant_name;
-    }
-
-    public void setConsultant_name(String consultant_name) {
-        this.consultant_name = consultant_name;
     }
 
     public String getMessage() {
