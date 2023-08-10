@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SeekerRepository extends JpaRepository <Seeker,Integer> {
 
+    Seeker findByUsername(String username);
 }
