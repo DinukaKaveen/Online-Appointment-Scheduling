@@ -31,10 +31,29 @@
         this.date.value,
         this.time.value,
         this.category.value,
-        this.consultant_name.value,
-        this.message.value);"
+        this.consultant_id.value,
+        this.message.value,
+        this.status.value);"
       >
         <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <div>
+            <input
+              type="text"
+              id="consultant_id"
+              name="consultant_id"
+              placeholder="consultant_id"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              id="status"
+              name="status"
+              value="Pending"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
           <div>
             <label
               for="date"
@@ -117,8 +136,9 @@
         date,
         time,
         category,
-        consultant_name,
-        message
+        consultant_id,
+        message,
+        status
       ) {
         fetch("http://localhost:8080/MakeAppointment", {
           method: "POST",
@@ -129,8 +149,9 @@
             date,
             time,
             category,
-            consultant_name,
-            message
+            consultant_id,
+            message,
+            status
           }),
         })
           .then((response) => {
