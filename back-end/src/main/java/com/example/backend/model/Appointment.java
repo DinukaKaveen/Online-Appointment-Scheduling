@@ -12,7 +12,7 @@ public class Appointment {
     @Id
     @GeneratedValue
     private Integer appointment_id;
-    private Integer user_id;
+    private Integer seeker_id;
     private Integer consultant_id;
     private String date;
     private String time;
@@ -28,12 +28,12 @@ public class Appointment {
         this.appointment_id = appointment_id;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getSeeker_id() {
+        return seeker_id;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setSeeker_id(Integer seeker_id) {
+        this.seeker_id = seeker_id;
     }
 
     public Integer getConsultant_id() {
