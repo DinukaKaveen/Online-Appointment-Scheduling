@@ -55,6 +55,10 @@
               .then((data1) => {
                 consultant_name.textContent = data1.consultantFirstName;
                 category.textContent = data1.category;
+
+                actionButton.addEventListener("click", () => {
+                  window.location.href = `seekers_make_appointment.html?id=${element.consultantId}&date=${element.date}&time=${element.time}&category=${data1.category}&name=${data1.consultantFirstName}`;
+                });
               });
 
             date.textContent = element.date;
@@ -63,15 +67,14 @@
             actionButton.textContent = "Make Appointment";
             actionButton.setAttribute("consultantId", element.consultantId);
 
-            action.appendChild(actionButton);
-
+            tableBody.appendChild(row);
             row.appendChild(consultant_name);
             row.appendChild(category);
             row.appendChild(date);
             row.appendChild(time);
             row.appendChild(availability);
             row.appendChild(action);
-            tableBody.appendChild(row);
+            action.appendChild(actionButton);
           });
         })
         .catch((error) => {
