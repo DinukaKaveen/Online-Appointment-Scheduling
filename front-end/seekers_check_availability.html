@@ -33,6 +33,51 @@
         $("#example").DataTable();
       });
     </script>
+
+    <script>
+      fetch("http://localhost:8080/Availability")
+        .then((response) => response.json())
+        .then((data) => {
+          const tableBody = document.querySelector("#example tbody");
+          data.forEach((element) => {
+            const row = document.createElement("tr");
+            const consultant_name = document.createElement("td");
+            const category = document.createElement("td");
+            const date = document.createElement("td");
+            const time = document.createElement("td");
+            const availability = document.createElement("td");
+            const action = document.createElement("td");
+            const actionButton = document.createElement("button");
+
+            consultantId = element.consultantId;
+            fetch(`http://localhost:8080/Consultant/${consultantId}`)
+              .then((response1) => response1.json())
+              .then((data1) => {
+                consultant_name.textContent = data1.consultantFirstName;
+                category.textContent = data1.category;
+              });
+
+            date.textContent = element.date;
+            time.textContent = element.time;
+            availability.textContent = element.availability;
+            actionButton.textContent = "Make Appointment";
+            actionButton.setAttribute("consultantId", element.consultantId);
+
+            action.appendChild(actionButton);
+
+            row.appendChild(consultant_name);
+            row.appendChild(category);
+            row.appendChild(date);
+            row.appendChild(time);
+            row.appendChild(availability);
+            row.appendChild(action);
+            tableBody.appendChild(row);
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    </script>
   </head>
   <body>
     <div id="includeHtml"></div>
@@ -46,7 +91,6 @@
       <table id="example" class="display" style="width: 100%">
         <thead>
           <tr>
-            <th>Consultant ID</th>
             <th>Consultant Name</th>
             <th>Category</th>
             <th>Date</th>
@@ -56,37 +100,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Edinburgh</td>
-            <td>Edinburgh</td>
-            <td>2011-04-25</td>
-            <td>61</td>
-            <td>Available</td>
-            <td>
-              <button
-                type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Make Appointment
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
+          <tr></tr>
         </tbody>
       </table>
     </div>
