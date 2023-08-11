@@ -180,6 +180,23 @@
     </script>
 
     <script>
+      // Get URL parameters using JavaScript
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      const fname = urlParams.get("name");
+      const date = urlParams.get("date");
+      const time = urlParams.get("time");
+      const category = urlParams.get("category");
+
+      // Display the parameters on the page
+      document.getElementById("consultantId").value = id;
+      document.getElementById("consultant_name").value = fname;
+      document.getElementById("date").value = date;
+      document.getElementById("time").value = time;
+      document.getElementById("category").value = category;
+    </script>
+
+    <script>
       document.getElementById("seekerId").value =
         sessionStorage.getItem("seeker_id");
     </script>
