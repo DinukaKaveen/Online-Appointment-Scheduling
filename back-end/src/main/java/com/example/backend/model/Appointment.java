@@ -11,37 +11,37 @@ public class Appointment {
 
     @Id
     @GeneratedValue
-    private Integer appointment_id;
-    private Integer seeker_id;
-    private Integer consultant_id;
+    private Integer appointmentId;
+    private Integer seekerId;
+    private Integer consultantId;
     private String date;
     private String time;
     private String category;
     private String message;
     private String status;
 
-    public Integer getAppointment_id() {
-        return appointment_id;
+    public Integer getAppointmentId() {
+        return appointmentId;
     }
 
-    public void setAppointment_id(Integer appointment_id) {
-        this.appointment_id = appointment_id;
+    public void setAppointmentId(Integer appointmentId) {
+        this.appointmentId = appointmentId;
     }
 
-    public Integer getSeeker_id() {
-        return seeker_id;
+    public Integer getSeekerId() {
+        return seekerId;
     }
 
-    public void setSeeker_id(Integer seeker_id) {
-        this.seeker_id = seeker_id;
+    public void setSeekerId(Integer seekerId) {
+        this.seekerId = seekerId;
     }
 
-    public Integer getConsultant_id() {
-        return consultant_id;
+    public Integer getConsultantId() {
+        return consultantId;
     }
 
-    public void setConsultant_id(Integer consultant_id) {
-        this.consultant_id = consultant_id;
+    public void setConsultantId(Integer consultantId) {
+        this.consultantId = consultantId;
     }
 
     public String getDate() {
