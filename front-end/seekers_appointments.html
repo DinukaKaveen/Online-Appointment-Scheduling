@@ -67,8 +67,7 @@
             actionButton.textContent = "Cancel Appointment";
             actionButton.setAttribute("appointmentId", element.appointmentId);
 
-            action.appendChild(actionButton);
-
+            tableBody.appendChild(row);
             row.appendChild(appointmentId);
             row.appendChild(category);
             row.appendChild(consultant_name);
@@ -76,8 +75,7 @@
             row.appendChild(time);
             row.appendChild(status);
             row.appendChild(action);
-
-            tableBody.appendChild(row);
+            action.appendChild(actionButton);
           });
         })
         .catch((error) => {
