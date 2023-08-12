@@ -23,12 +23,12 @@ public class AppointmentController {
         return ResponseEntity.ok(newAppointment);
     }
 
-    @GetMapping("/Appointments/{seekerId}")
+    @GetMapping("/SeekerAppointments/{seekerId}")
     public List<Appointment> getAppointmentbySeekerId(@PathVariable Integer seekerId){
         return AppointmentRepo.findAllBySeekerId(seekerId);
     }
 
-    @GetMapping("/Appointments/{consultantId}")
+    @GetMapping("/ConsultantAppointments/{consultantId}")
     public List<Appointment> getAppointmentbyconsultantId(@PathVariable Integer consultantId){
         return AppointmentRepo.findAllByConsultantId(consultantId);
     }
