@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.exception.UserNotFoundException;
 import com.example.backend.model.Appointment;
 import com.example.backend.repository.AppointmentRepository;
 import com.example.backend.repository.SeekerRepository;
@@ -31,5 +32,15 @@ public class AppointmentController {
     @GetMapping("/ConsultantAppointments/{consultantId}")
     public List<Appointment> getAppointmentbyconsultantId(@PathVariable Integer consultantId){
         return AppointmentRepo.findAllByConsultantId(consultantId);
+    }
+
+    @PutMapping("/ConsultantAccept/{appointmentId}")
+    Appointment updateStatus(@RequestBody Appointment update, @PathVariable Integer appointmentId){
+        return AppointmentRepo.findById(appointmentId)
+                .map(appointment -> {
+                    appointment.setStatus("Accept");
+
+                    return AppointmentRepo.save(appointment);
+                }).orElseThrow(()-> new UserNotFoundException(appointmentId));
     }
 }
