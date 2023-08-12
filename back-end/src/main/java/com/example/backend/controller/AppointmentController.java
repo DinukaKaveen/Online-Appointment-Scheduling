@@ -29,6 +29,11 @@ public class AppointmentController {
         return AppointmentRepo.findAll();
     }
 
+    @GetMapping("/Appointments/{status}")
+    public List<Appointment> getAppointmentsByStatus(@PathVariable String status){
+        return AppointmentRepo.findAllByStatus(status);
+    }
+
     @GetMapping("/SeekerAppointments/{seekerId}")
     public List<Appointment> getAppointmentBySeekerId(@PathVariable Integer seekerId){
         return AppointmentRepo.findAllBySeekerId(seekerId);
