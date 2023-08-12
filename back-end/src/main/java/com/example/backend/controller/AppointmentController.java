@@ -30,6 +30,6 @@ public class AppointmentController {
 
     @GetMapping("/Appointments/{consultantId}")
     public List<Appointment> getAppointmentbyconsultantId(@PathVariable Integer consultantId){
-        return AppointmentRepo.findAllByconsultantId(consultantId);
+        return AppointmentRepo.findAllByConsultantId(consultantId);
     }
 }
