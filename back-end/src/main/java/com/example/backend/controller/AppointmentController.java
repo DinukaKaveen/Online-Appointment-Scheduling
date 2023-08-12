@@ -34,7 +34,7 @@ public class AppointmentController {
         return AppointmentRepo.findAllByConsultantId(consultantId);
     }
 
-    @PutMapping("/ConsultantUpdateStatus/{appointmentId}/{appointmentStatus}")
+    @PutMapping("/UpdateAppointmentStatus/{appointmentId}/{appointmentStatus}")
     Appointment updateStatus(@RequestBody Appointment update, @PathVariable Integer appointmentId, @PathVariable String appointmentStatus){
         return AppointmentRepo.findById(appointmentId)
                 .map(appointment -> {
