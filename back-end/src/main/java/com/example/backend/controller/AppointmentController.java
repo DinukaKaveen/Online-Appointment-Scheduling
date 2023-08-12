@@ -35,10 +35,20 @@ public class AppointmentController {
     }
 
     @PutMapping("/ConsultantAccept/{appointmentId}")
-    Appointment updateStatus(@RequestBody Appointment update, @PathVariable Integer appointmentId){
+    Appointment updateStatusAccept(@RequestBody Appointment update, @PathVariable Integer appointmentId){
         return AppointmentRepo.findById(appointmentId)
                 .map(appointment -> {
                     appointment.setStatus("Accept");
+
+                    return AppointmentRepo.save(appointment);
+                }).orElseThrow(()-> new UserNotFoundException(appointmentId));
+    }
+
+    @PutMapping("/ConsultantReject/{appointmentId}")
+    Appointment updateStatusReject(@RequestBody Appointment update, @PathVariable Integer appointmentId){
+        return AppointmentRepo.findById(appointmentId)
+                .map(appointment -> {
+                    appointment.setStatus("Reject");
 
                     return AppointmentRepo.save(appointment);
                 }).orElseThrow(()-> new UserNotFoundException(appointmentId));
