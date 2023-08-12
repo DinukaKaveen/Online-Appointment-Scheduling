@@ -36,7 +36,7 @@
 
     <script>
       seekerId = sessionStorage.getItem("seeker_id");
-      fetch(`http://localhost:8080/Appointments/${seekerId}`)
+      fetch(`http://localhost:8080/SeekerAppointments/${seekerId}`)
         .then((response) => response.json())
         .then((data) => {
           const tableBody = document.querySelector("#example tbody");
