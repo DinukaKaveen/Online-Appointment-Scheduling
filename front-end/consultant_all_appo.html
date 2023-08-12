@@ -80,7 +80,7 @@
             actionButton_accept.addEventListener("click", () => {
 
               const appointmentId = element.appointmentId;
-              fetch(`http://localhost:8080/ConsultantAccept/${appointmentId}`, {
+              fetch(`http://localhost:8080/ConsultantUpdateStatus/${appointmentId}/Accept`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
@@ -105,7 +105,7 @@
             actionButton_reject.addEventListener("click", () => {
 
               const appointmentId = element.appointmentId;
-              fetch(`http://localhost:8080/ConsultantReject/${appointmentId}`, {
+              fetch(`http://localhost:8080/ConsultantUpdateStatus/${appointmentId}/Reject`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
