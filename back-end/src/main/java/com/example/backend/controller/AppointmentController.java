@@ -25,12 +25,12 @@ public class AppointmentController {
     }
 
     @GetMapping("/SeekerAppointments/{seekerId}")
-    public List<Appointment> getAppointmentbySeekerId(@PathVariable Integer seekerId){
+    public List<Appointment> getAppointmentBySeekerId(@PathVariable Integer seekerId){
         return AppointmentRepo.findAllBySeekerId(seekerId);
     }
 
     @GetMapping("/ConsultantAppointments/{consultantId}")
-    public List<Appointment> getAppointmentbyconsultantId(@PathVariable Integer consultantId){
+    public List<Appointment> getAppointmentByConsultantId(@PathVariable Integer consultantId){
         return AppointmentRepo.findAllByConsultantId(consultantId);
     }
 
@@ -42,5 +42,10 @@ public class AppointmentController {
 
                     return AppointmentRepo.save(appointment);
                 }).orElseThrow(()-> new UserNotFoundException(appointmentId));
+    }
+
+    @GetMapping("/Appointments/{consultantId}/{status}")
+    public List<Appointment> getAppointmentByStatus(@PathVariable Integer consultantId, @PathVariable String status){
+        return AppointmentRepo.findAllByConsultantIdAndStatus(consultantId, status);
     }
 }
