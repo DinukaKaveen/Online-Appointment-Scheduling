@@ -1,9 +1,10 @@
 package com.example.backend.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 
+@Entity
 public class Admin {
     @Id
     @GeneratedValue
