@@ -15,8 +15,8 @@ public class Admin {
     private String AdminType;
     private String AdminEmail;
     private String AdminPhoneNo;
-    private String AdminUsername;
-    private String AdminPassword;
+    private String username;
+    private String password;
 
     public Integer getAdminId() {
         return AdminId;
@@ -66,19 +66,19 @@ public class Admin {
         AdminPhoneNo = adminPhoneNo;
     }
 
-    public String getAdminUsername() {
-        return AdminUsername;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAdminUsername(String adminUsername) {
-        AdminUsername = adminUsername;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getAdminPassword() {
-        return AdminPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAdminPassword(String adminPassword) {
-        AdminPassword = adminPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
