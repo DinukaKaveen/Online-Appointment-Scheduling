@@ -10,8 +10,8 @@ public class Consultant {
     @Id
     @GeneratedValue
     private Integer consultantId;
-    private String consultantFirstName;
-    private String consultantLastName;
+    private String firstName;
+    private String lastName;
     private String category;
     private String phoneNo;
     private String email;
@@ -27,20 +27,20 @@ public class Consultant {
         this.consultantId = consultantId;
     }
 
-    public String getConsultantFirstName() {
-        return consultantFirstName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setConsultantFirstName(String consultantFirstName) {
-        this.consultantFirstName = consultantFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getConsultantLastName() {
-        return consultantLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setConsultantLastName(String consultantLastName) {
-        this.consultantLastName = consultantLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getCategory() {
