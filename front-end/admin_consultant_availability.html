@@ -52,7 +52,7 @@
             fetch(`http://localhost:8080/Consultant/${consultantId}`)
               .then((response1) => response1.json())
               .then((data1) => {
-                consultant_name.textContent = data1.consultantFirstName;
+                consultant_name.textContent = data1.firstName;
                 category.textContent = data1.category;
               });
 
