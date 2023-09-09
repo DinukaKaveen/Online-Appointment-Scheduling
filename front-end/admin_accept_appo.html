@@ -62,7 +62,21 @@
             time.textContent = element.time;
             message.textContent = element.message;
             actionButton_conform.textContent = "Conform";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+
+            // Add CSS styles to the button
+            actionButton_conform.setAttribute("class", "conform-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .conform-button {
+              background-color: green;
+              color: white;
+              padding: 5px;
+              width: 80px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);

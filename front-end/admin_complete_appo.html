@@ -62,7 +62,21 @@
             time.textContent = element.time;
             message.textContent = element.message;
             actionButton_delete.textContent = "Delete";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+            
+            // Add CSS styles to the button
+            actionButton_delete.setAttribute("class", "delete-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .delete-button {
+              background-color: red;
+              color: white;
+              padding: 5px;
+              width: 80px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);
@@ -90,7 +104,7 @@
       <div
         class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
       >
-        <h5 class="text-xl font-bold dark:text-white">Accept Appointments</h5>
+        <h5 class="text-xl font-bold dark:text-white">Complete Appointments</h5>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
         <table id="example" class="display" style="width: 100%">
           <thead>

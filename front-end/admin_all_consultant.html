@@ -59,7 +59,21 @@
             phone_no.textContent = element.phoneNo;
             address.textContent = element.address;
             actionButton_delete.textContent = "Delete";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+
+            // Add CSS styles to the button
+            actionButton_delete.setAttribute("class", "delete-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .delete-button {
+                background-color: red;
+                color: white;
+                padding: 5px;
+                width: 70px;
+                border-radius: 5px;
+                cursor: pointer;
+                }
+                `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(consultantId);
@@ -72,10 +86,7 @@
             row.appendChild(action);
             action.appendChild(actionButton_delete);
 
-            actionButton_delete.addEventListener("click", () => {
-
-              
-            });
+            actionButton_delete.addEventListener("click", () => {});
           });
         })
         .catch((error) => {
@@ -89,7 +100,7 @@
       <div
         class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
       >
-        <h5 class="text-xl font-bold dark:text-white">Consultants</h5>
+        <h5 class="text-xl font-bold dark:text-white">Consultants Details</h5>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
         <table id="example" class="display" style="width: 100%">
           <thead>

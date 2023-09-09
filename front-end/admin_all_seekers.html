@@ -58,6 +58,21 @@
             phone_no.textContent = element.mobile_no;
             actionButton_delete.textContent = "Delete";
 
+            // Add CSS styles to the button
+            actionButton_delete.setAttribute("class", "delete-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .delete-button {
+                background-color: red;
+                color: white;
+                padding: 5px;
+                width: 70px;
+                border-radius: 5px;
+                cursor: pointer;
+                }
+                `;
+            document.head.appendChild(style);
+
             tableBody.appendChild(row);
             row.appendChild(seeker_id);
             row.appendChild(first_name);
@@ -68,10 +83,7 @@
             row.appendChild(action);
             action.appendChild(actionButton_delete);
 
-            actionButton_delete.addEventListener("click", () => {
-
-              
-            });
+            actionButton_delete.addEventListener("click", () => {});
           });
         })
         .catch((error) => {

@@ -66,7 +66,31 @@
             statuss.textContent = element.status;
             actionButton_edit.textContent = "Edit";
             actionButton_cancel.textContent = "Cancel";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+            
+            // Add CSS styles to the button
+            actionButton_edit.setAttribute("class", "edit-button");
+            actionButton_cancel.setAttribute("class", "delete-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .edit-button {
+              background-color: #FB7C19;
+              color: white;
+              padding: 5px;
+              width: 65px;
+              margin-right: 5px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            .delete-button {
+              background-color: red;
+              color: white;
+              padding: 5px;
+              width: 65px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);
