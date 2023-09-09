@@ -53,11 +53,11 @@
             fetch(`http://localhost:8080/Consultant/${consultantId}`)
               .then((response1) => response1.json())
               .then((data1) => {
-                consultant_name.textContent = data1.consultantFirstName;
+                consultant_name.textContent = data1.firstName;
                 category.textContent = data1.category;
 
                 actionButton.addEventListener("click", () => {
-                  window.location.href = `seekers_make_appointment.html?id=${element.consultantId}&date=${element.date}&time=${element.time}&category=${data1.category}&name=${data1.consultantFirstName}`;
+                  window.location.href = `seekers_make_appointment.html?id=${element.consultantId}&date=${element.date}&time=${element.time}&category=${data1.category}&name=${data1.firstName}`;
                 });
               });
 
