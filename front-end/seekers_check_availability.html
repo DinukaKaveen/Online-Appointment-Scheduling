@@ -65,7 +65,21 @@
             time.textContent = element.time;
             availability.textContent = element.availability;
             actionButton.textContent = "Make Appointment";
-            actionButton.setAttribute("consultantId", element.consultantId);
+            
+            // Add CSS styles to the button
+            actionButton.setAttribute("class", "button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .button {
+              background-color: blue;
+              color: white;
+              padding: 5px;
+              width: 160px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(consultant_name);

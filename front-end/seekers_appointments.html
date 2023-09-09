@@ -65,7 +65,21 @@
             time.textContent = element.time;
             status.textContent = element.status;
             actionButton.textContent = "Cancel Appointment";
-            actionButton.setAttribute("appointmentId", element.appointmentId);
+            
+            // Add CSS styles to the button
+            actionButton.setAttribute("class", "button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .button {
+              background-color: red;
+              color: white;
+              padding: 5px;
+              width: 170px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);
@@ -76,6 +90,10 @@
             row.appendChild(status);
             row.appendChild(action);
             action.appendChild(actionButton);
+
+            actionButton.addEventListener("click", () => {
+              
+            });
           });
         })
         .catch((error) => {
