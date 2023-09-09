@@ -58,7 +58,7 @@
               .then((response1) => response1.json())
               .then((data1) => {
                 category.textContent = data1.category;
-                consultant_name.textContent = data1.consultantFirstName;
+                consultant_name.textContent = data1.firstName;
               });
 
             date.textContent = element.date;
