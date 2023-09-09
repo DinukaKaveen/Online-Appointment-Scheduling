@@ -25,4 +25,9 @@ public class AvailabilityController {
     List<Availability> getAllAvailability(){
         return availabilityRepo.findAll();
     }
+
+    @GetMapping("/ConsultantAvailability/{consultantId}")
+    public List<Availability> getAppointmentBySeekerId(@PathVariable Integer consultantId){
+        return availabilityRepo.findAllByConsultantId(consultantId);
+    }
 }
