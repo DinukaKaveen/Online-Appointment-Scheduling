@@ -1,12 +1,15 @@
 package com.example.backend.controller;
 
 import com.example.backend.exception.UserNotFoundException;
+import com.example.backend.model.Consultant;
 import com.example.backend.model.Seeker;
 import com.example.backend.repository.SeekerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin("http://127.0.0.1:3000")
@@ -35,6 +38,11 @@ public class SeekerController {
     public ResponseEntity<Seeker> newSeeker(@RequestBody Seeker newSeeker){
         SeekerRepo.save(newSeeker);
         return ResponseEntity.ok(newSeeker);
+    }
+
+    @GetMapping("/AllSeekers")
+    List<Seeker> getAllSeekers(){
+        return SeekerRepo.findAll();
     }
 
     @GetMapping("/Seeker/{seekerId}")
