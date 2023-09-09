@@ -65,7 +65,31 @@
             message.textContent = element.message;
             actionButton_revise.textContent = "Revise";
             actionButton_reject.textContent = "Reject";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+            
+            // Add CSS styles to the button
+            actionButton_revise.setAttribute("class", "revise-button");
+            actionButton_reject.setAttribute("class", "reject-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .revise-button {
+              background-color: #FB7C19;
+              color: white;
+              padding: 5px;
+              width: 70px;
+              margin-right: 5px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            .reject-button {
+              background-color: red;
+              color: white;
+              padding: 5px;
+              width: 70px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);

@@ -67,7 +67,31 @@
             statuss.textContent = element.status;
             actionButton_accept.textContent = "Accept";
             actionButton_reject.textContent = "Reject";
-            //actionButton.setAttribute("appointmentId", element.appointmentId);
+            
+            // Add CSS styles to the button
+            actionButton_accept.setAttribute("class", "accept-button");
+            actionButton_reject.setAttribute("class", "reject-button");
+            const style = document.createElement("style");
+            style.innerHTML = `
+            .accept-button {
+              background-color: green;
+              color: white;
+              padding: 5px;
+              width: 70px;
+              margin-right: 5px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            .reject-button {
+              background-color: red;
+              color: white;
+              padding: 5px;
+              width: 70px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            `;
+            document.head.appendChild(style);
 
             tableBody.appendChild(row);
             row.appendChild(appointmentId);
