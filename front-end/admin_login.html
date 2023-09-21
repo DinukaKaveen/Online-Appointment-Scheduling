@@ -77,15 +77,14 @@
         })
           .then((response) => {
             if (response.ok) {
-              alert("Login successful!");
-              return response.json();
+              response.json().then((data) => {
+                const adminId = data;
+                sessionStorage.setItem("admin_id", adminId);
+                window.location.href = "admin_dashboard.html";
+              });
             } else {
               alert("Login failed!");
             }
-          })
-          .then((adminId) => {
-            sessionStorage.setItem("admin_id", adminId);
-            window.location.href = "admin_dashboard.html";
           })
           .catch((error) => {
             alert("Error: " + error);

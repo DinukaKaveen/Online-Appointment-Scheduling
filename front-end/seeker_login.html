@@ -77,15 +77,14 @@
         })
           .then((response) => {
             if (response.ok) {
-              alert("Login successful!");
-              return response.json();
+              response.json().then((data) => {
+                const seekerId = data;
+                sessionStorage.setItem("seeker_id", seekerId);
+                window.location.href = "seekers_home.html";
+              });
             } else {
               alert("Login failed!");
             }
-          })
-          .then((seekerId) => {
-            sessionStorage.setItem("seeker_id", seekerId);
-            window.location.href = "seekers_home.html";
           })
           .catch((error) => {
             alert("Error: " + error);
