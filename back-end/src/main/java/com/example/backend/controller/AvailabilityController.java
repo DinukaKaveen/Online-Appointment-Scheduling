@@ -34,6 +34,15 @@ public class AvailabilityController {
                 }).orElseThrow(()-> new UserNotFoundException(availabilityId));
     }
 
+    @DeleteMapping("/DeleteAvailability/{availabilityId}")
+    String deleteAvailability(@PathVariable Integer availabilityId) {
+        if (!availabilityRepo.existsById(availabilityId)) {
+            throw new UserNotFoundException(availabilityId);
+        }
+        availabilityRepo.deleteById(availabilityId);
+        return "User with id " + availabilityId + " has been deleted successfully";
+    }
+
     @GetMapping("/Availability")
     List<Availability> getAllAvailability(){
         return availabilityRepo.findAll();

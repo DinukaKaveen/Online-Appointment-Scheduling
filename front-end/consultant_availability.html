@@ -92,13 +92,33 @@
             action.appendChild(actionButton_delete);
 
             actionButton_edit.addEventListener("click", () => {
-              window.location.href = `consultant_edit_availability.html?id=${element.availabilityId}&date=${element.date}&time=${element.time}&availability=${element.availability}`
-
+              window.location.href = `consultant_edit_availability.html?id=${element.availabilityId}&date=${element.date}&time=${element.time}&availability=${element.availability}`;
             });
 
             actionButton_delete.addEventListener("click", () => {
-
-
+              const id = element.availabilityId;
+              const confirmDelete = confirm(
+                `Are you sure you want to delete this availability ?`
+              );
+              if (confirmDelete) {
+                fetch(`http://localhost:8080/DeleteAvailability/${id}`, {
+                  method: "DELETE",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((response) => {
+                    if (response.ok) {
+                      row.remove();
+                      alert(`Deleted successfully`);
+                    } else {
+                      alert("Error Deleting");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Error Deleting:", error);
+                  });
+              }
             });
           });
         })
