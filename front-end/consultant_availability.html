@@ -92,7 +92,7 @@
             action.appendChild(actionButton_delete);
 
             actionButton_edit.addEventListener("click", () => {
-
+              window.location.href = `consultant_edit_availability.html?id=${element.availabilityId}&date=${element.date}&time=${element.time}&availability=${element.availability}`
 
             });
 
