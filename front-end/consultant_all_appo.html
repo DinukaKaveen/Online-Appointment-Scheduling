@@ -67,7 +67,7 @@
             statuss.textContent = element.status;
             actionButton_accept.textContent = "Accept";
             actionButton_reject.textContent = "Reject";
-            
+
             // Add CSS styles to the button
             actionButton_accept.setAttribute("class", "accept-button");
             actionButton_reject.setAttribute("class", "reject-button");
@@ -105,17 +105,19 @@
             action.appendChild(actionButton_reject);
 
             actionButton_accept.addEventListener("click", () => {
-
               const appointmentId = element.appointmentId;
-              fetch(`http://localhost:8080/UpdateAppointmentStatus/${appointmentId}/Accept`, {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  status,
-                }),
-              })
+              fetch(
+                `http://localhost:8080/UpdateAppointmentStatus/${appointmentId}/Accept`,
+                {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    status,
+                  }),
+                }
+              )
                 .then((response) => {
                   if (response.ok) {
                     alert("successful!");
@@ -126,21 +128,22 @@
                 .catch((error) => {
                   alert("Error: " + error);
                 });
-
             });
 
             actionButton_reject.addEventListener("click", () => {
-
               const appointmentId = element.appointmentId;
-              fetch(`http://localhost:8080/UpdateAppointmentStatus/${appointmentId}/Reject`, {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  status,
-                }),
-              })
+              fetch(
+                `http://localhost:8080/UpdateAppointmentStatus/${appointmentId}/Reject`,
+                {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    status,
+                  }),
+                }
+              )
                 .then((response) => {
                   if (response.ok) {
                     alert("successful!");
@@ -151,7 +154,6 @@
                 .catch((error) => {
                   alert("Error: " + error);
                 });
-
             });
           });
         })
