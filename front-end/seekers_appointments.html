@@ -92,6 +92,30 @@
             action.appendChild(actionButton);
 
             actionButton.addEventListener("click", () => {
+
+              const id = element.appointmentId;
+              const confirmDelete = confirm(
+                `Are you sure you want to delete this appointment ?`
+              );
+              if (confirmDelete) {
+                fetch(`http://localhost:8080/DeleteAppointment/${id}`, {
+                  method: "DELETE",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((response) => {
+                    if (response.ok) {
+                      row.remove();
+                      alert(`Deleted successfully`);
+                    } else {
+                      alert("Error Deleting");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Error Deleting:", error);
+                  });
+              }
               
             });
           });

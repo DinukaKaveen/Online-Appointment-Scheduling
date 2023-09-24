@@ -58,4 +58,13 @@ public class AppointmentController {
     public List<Appointment> getAppointmentByStatus(@PathVariable Integer consultantId, @PathVariable String status){
         return AppointmentRepo.findAllByConsultantIdAndStatus(consultantId, status);
     }
+
+    @DeleteMapping("/DeleteAppointment/{appointmentId}")
+    String deleteAppointmentId(@PathVariable Integer appointmentId) {
+        if (!AppointmentRepo.existsById(appointmentId)) {
+            throw new UserNotFoundException(appointmentId);
+        }
+        AppointmentRepo.deleteById(appointmentId);
+        return "AppointmentId with id " + appointmentId + " has been deleted successfully";
+    }
 }
