@@ -81,7 +81,7 @@
               response.json().then((data) => {
                 const adminId = data;
                 sessionStorage.setItem("admin_id", adminId);
-                window.location.href = "admin_dashboard.html";
+                window.location.href = "admin_all_appo.html";
               });
             } else {
               alert("Login failed!");

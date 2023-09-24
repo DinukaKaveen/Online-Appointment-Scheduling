@@ -81,7 +81,7 @@
               response.json().then((data) => {
                 const seekerId = data;
                 sessionStorage.setItem("seeker_id", seekerId);
-                window.location.href = "seekers_home.html";
+                window.location.href = "seekers_check_availability.html";
               });
             } else {
               alert("Login failed!");

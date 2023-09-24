@@ -81,7 +81,7 @@
               response.json().then((data) => {
                 const consultantId = data;
                 sessionStorage.setItem("consultant_id", consultantId);
-                window.location.href = "consultant_dashboard.html";
+                window.location.href = "consultant_all_appo.html";
               });
             } else {
               alert("Login failed!");
